@@ -1,0 +1,93 @@
+{
+  "name": "tab-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node ace serve --watch",
+    "build": "node ace build --production --ignore-ts-errors",
+    "start": "node server.js",
+    "test": "node ace test",
+    "lint": "eslint . --ext=.ts",
+    "format": "prettier --write .",
+    "migration:run": "node ace migration:run --force",
+    "migration:rollback": "node ace migration:rollback",
+    "migration:refresh": "node ace migration:refresh"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptApp",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error"
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
+    "@types/source-map-support": "^0.5.6"
+  },
+  "dependencies": {
+    "@adonisjs/assembler": "^5.9.5",
+    "@adonisjs/auth": "^5.1.1",
+    "@adonisjs/core": "^5.9.0",
+    "@adonisjs/lucid": "^10.0.0",
+    "@adonisjs/mail": "^8.2.1",
+    "@adonisjs/repl": "^3.1.11",
+    "@adonisjs/view": "^6.2.0",
+    "@getbrevo/brevo": "^1.0.1",
+    "@japa/preset-adonis": "^1.2.0",
+    "@japa/runner": "^2.5.1",
+    "@types/node-cron": "^3.0.11",
+    "@types/nodemailer": "^6.4.10",
+    "@types/otp-generator": "^4.0.0",
+    "@types/proxy-addr": "^2.0.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/sinon": "^17.0.3",
+    "@types/source-map-support": "^0.5.6",
+    "adonis-lucid-soft-deletes": "^1.4.4",
+    "adonis-preset-ts": "^2.1.0",
+    "adonis5-scheduler": "^2.1.1",
+    "axios": "^1.6.2",
+    "bullmq": "^5.16.0",
+    "date-fns": "^2.30.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-adonis": "^2.1.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "google-auth-library": "^9.13.0",
+    "google-spreadsheet": "^4.1.2",
+    "googleapis": "^140.0.1",
+    "luxon": "^3.3.0",
+    "node-cron": "^3.0.3",
+    "otp-generator": "^4.0.1",
+    "pg": "^8.11.1",
+    "pino-pretty": "^10.2.0",
+    "prettier": "^3.0.0",
+    "proxy-addr": "^2.0.7",
+    "qrcode": "^1.5.3",
+    "reflect-metadata": "^0.1.13",
+    "sinon": "^17.0.1",
+    "source-map-support": "^0.5.21",
+    "typescript": "~4.6",
+    "youch": "^3.2.3",
+    "youch-terminal": "^2.2.2"
+  }
+}

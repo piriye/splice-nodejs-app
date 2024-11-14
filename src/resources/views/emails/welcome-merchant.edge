@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tab | Welcome</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    * {
+      margin: 0;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      background: rgb(234, 234, 234);
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+    }
+
+    #root,
+    #__next {
+      isolation: isolate;
+    }
+
+    .email-background {
+      padding: 10px;
+      background: rgb(234, 234, 234);
+    }
+
+    .main-container {
+      width: min(100%, 640px);
+      background: white;
+      padding: 24px 24px 80px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
+
+    .top-banner {
+      background: #fe396e;
+      height: 188px;
+      width: 100%;
+      border-radius: 16px;
+      background-image: url("https://i.postimg.cc/fL6vrzNW/banner-bg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-top: 50px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .customer-banner {
+      background: #FD9843;
+      background-image: url("https://i.postimg.cc/fL6vrzNW/banner-bg.png");
+    }
+
+    .banner-image {
+      width: 57px;
+      height: 34px;
+    }
+
+    .banner-title {
+      color: #fff;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+    }
+
+    .message {
+      padding-top: 24px;
+      padding-bottom: 40px;
+    }
+
+    .message-name {
+      color: #161b23;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      /* 28px */
+      padding-bottom: 16px;
+    }
+
+    .message-main-text {
+      color: #2f3a4c;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      /* 150% */
+    }
+
+    .message-bold-text {
+      color: #161b23;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    .amount-container {
+      text-align: center;
+      border-top: 1px solid #ffedf2;
+      border-bottom: 1px solid #ffedf2;
+      padding: 24px 0;
+    }
+
+    .amount-title {
+      color: #344054;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 22px;
+      /* 157.143% */
+      padding-bottom: 8px;
+    }
+
+    .amount {
+      color: #161b23;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      /* 56px */
+      letter-spacing: -0.5px;
+    }
+
+    .breakdown-container {
+      padding: 32px 0;
+    }
+
+    .breakdown-title {
+      color: #344054;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 22px;
+      /* 157.143% */
+      padding-bottom: 12px;
+    }
+
+    .breakdown-table {
+      border-radius: 16px;
+      border: 1px solid #ffb2c7;
+      padding: 0px 16px;
+    }
+
+    .customer-breakdown-table {
+      border: 1px solid #FEDFC5;
+    }
+
+    .table-item {
+      display: flex;
+      padding: 20px 0px;
+      border-bottom: 1px solid #ffb2c7;
+    }
+
+    .customer-table-item {
+      border-bottom: 1px solid #FEDFC5;
+    }
+
+    .item-image {
+      width: 40px;
+      height: 40px;
+    }
+
+    .item-label {
+      color: #777f8c;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 22px;
+      /* 157.143% */
+      padding: 9px 0;
+      padding-left: 4px;
+      width: min(100%, 360px);
+      box-sizing: border-box;
+    }
+
+    .item-amount {
+      color: #344054;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 22px;
+      /* 157.143% */
+      padding: 9px 0;
+      padding-left: 4px;
+      width: min(100%, 25px);
+      box-sizing: border-box;
+    }
+
+    .item-price {
+      text-align: right;
+      color: #344054;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px;
+      /* 150% */
+      padding: 9px 0;
+      padding-left: 4px;
+      width: min(100%, 120px);
+      box-sizing: border-box;
+    }
+
+    .table-item:last-child {
+      border: none;
+    }
+
+    .pay-merchant-container {
+      padding-bottom: 24px;
+    }
+
+    .regards-container {
+      color: #2f3a4c;
+      font-style: normal;
+      line-height: 140%;
+      /* 28px */
+      padding-bottom: 50px;
+    }
+
+    .regards-bold {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .regards-name {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .contact-text {
+      padding: 24px 0px 10px;
+      color: #252d3c;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      border-top: 1px solid #ffb2c7;
+    }
+
+    .customer-contact-text {
+      border-top: 1px solid #FEDFC5;
+    }
+
+    .contact-link {
+      color: #fe396e;
+      text-decoration: none;
+    }
+
+    .customer-link {
+      color: #FD9843;
+    }
+
+
+    .footer {
+      width: min(100%, 640px);
+      justify-content: center;
+      background: #fff9fb;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -15px;
+      height: 219px;
+      box-sizing: border-box;
+      padding-top: 50px;
+    }
+
+    .customer-footer {
+      background: #FFFBF7;
+    }
+
+    .footer-content {
+      width: 200px;
+      height: 80px;
+      margin: auto;
+    }
+
+    .footer-text {
+      color: #344054;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    .social-container {
+      display: flex;
+      margin-top: 24px;
+    }
+
+    .icon-container {
+      height: 32px;
+      width: 32px;
+      border-radius: 9999px;
+      background: #fe396d10;
+      margin-left: 24px;
+    }
+
+    .customer-icon-container {
+      background: #FFF1E5;
+    }
+
+    .first-icon {
+      margin-left: 0;
+    }
+
+    .icon-container>a {
+      display: block;
+      width: 15px;
+      height: 15px;
+      margin-top: 7px;
+      margin-left: 7px;
+    }
+
+    .first-icon>a {
+      margin-top: 10px;
+      margin-left: 8px;
+    }
+
+    .icon-container>img {
+      width: 15px;
+      height: 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .top-banner {
+        background-image: url("https://i.postimg.cc/4xtwpTvz/banner-bg-mobile.png");
+      }
+
+      .customer-banner {
+        background-image: url("https://i.postimg.cc/fL6vrzNW/banner-bg.png");
+      }
+
+      .amount {
+        font-size: 32px;
+      }
+
+      .table-item {
+        gap: 6px;
+      }
+
+      .item-image {
+        grid-column: span 10;
+      }
+
+      .item-label {
+        grid-column: span 6;
+      }
+
+      .item-amount {
+        grid-column: span 1;
+      }
+
+      .item-price {
+        grid-column: span 3;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="email-background">
+    <div class="main-container">
+      @if(customer_type === 'merchant')
+      <div class="top-banner">
+        <img class="banner-image" src="https://i.postimg.cc/d1R57wKP/tab-logo.png" />
+        <h1 class="banner-title">Welcome to Tab</h1>
+      </div>
+      @else
+      <div class="top-banner customer-banner">
+        <img class="banner-image" src="https://i.postimg.cc/d1R57wKP/tab-logo.png" />
+        <h1 class="banner-title">Welcome to Tab</h1>
+      </div>
+      @endif
+      <div class="message-container">
+        <div class="message">
+          <p class="message-name">Hi {{user_name}},</p>
+          <p class="message-main-text">
+            Thank you for choosing Tab! You are on your way to enjoying
+            a secure, seamless, synergetic experience.
+          </p>
+        </div>
+      </div>
+      <div class="purchase-container">
+        @if(customer_type === 'merchant')
+        <div class="bottom-section">
+          <p class="contact-text">
+            If you experience any problems kindly contact us at
+            <a class="contact-link" href="mailto:support@usetab.co">support@usetab.co</a>
+            or call us on
+            <a class="contact-link" href="tel:+2349093624924">+2349093624924</a>
+          </p>
+        </div>
+        @else
+        <div class="bottom-section">
+          <p class="contact-text customer-contact-text">
+            If you experience any problems kindly contact us at
+            <a class="contact-link customer-link" href="mailto:support@usetab.co">support@usetab.co</a>
+            or call us on
+            <a class="contact-link customer-link" href="tel:+2349093624924">+2349093624924</a>
+          </p>
+        </div>
+        @endif
+      </div>
+    </div>
+    @if(customer_type === 'merchant')
+    <div class="footer">
+      <div class="footer-content">
+        <p class="footer-text">Keep up with Tab on:</p>
+        <div class="social-container">
+          <div class="icon-container first-icon">
+            <a href="https://www.instagram.com/kaladakienka">
+              <img src="https://i.postimg.cc/vHpfChzQ/twitter.png" />
+            </a>
+          </div>
+          <div class="icon-container">
+            <a href="https://www.instagram.com/kaladakienka">
+              <img src="https://i.postimg.cc/GhssPY16/instagram.png" />
+            </a>
+          </div>
+          <div class="icon-container">
+            <a href="https://www.instagram.com/kaladakienka">
+              <img src="https://i.postimg.cc/mgYzJskw/facebook.png" />
+            </a>
+          </div>
+          <div class="icon-container">
+            <a href="https://www.instagram.com/kaladakienka">
+              <img src="https://i.postimg.cc/5yQj3cD8/linkedin.png" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    @else
+    <div class="footer customer-footer">
+      <div class="footer-content">
+        <p class="footer-text">Keep up with Tab on:</p>
+        <div class="social-container">
+          <div class="icon-container customer-icon-container first-icon">
+            <a href="https://www.instagram.com/kaladakienka">
+              <img src="https://i.postimg.cc/vHpfChzQ/twitter.png" />
+            </a>
+          </div>
+          <div class="icon-container customer-icon-container">
+            <a href="https://www.instagram.com/kaladakienka">
+              <img src="https://i.postimg.cc/GhssPY16/instagram.png" />
+            </a>
+          </div>
+          <div class="icon-container customer-icon-container">
+            <a href="https://www.instagram.com/kaladakienka">
+              <img src="https://i.postimg.cc/mgYzJskw/facebook.png" />
+            </a>
+          </div>
+          <div class="icon-container customer-icon-container">
+            <a href="https://www.instagram.com/kaladakienka">
+              <img src="https://i.postimg.cc/5yQj3cD8/linkedin.png" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    @endif
+  </div>
+</body>
+
+</html>
