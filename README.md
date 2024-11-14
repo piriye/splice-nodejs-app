@@ -1,4 +1,4 @@
-# tab-api
+# splice-nodejs-app
 
 
 
@@ -15,7 +15,7 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/kalota/tab/tab-api.git
+git remote add origin git@github.com:piriye/splice-nodejs-app.git
 git branch -M main
 git push -uf origin main
 ```
